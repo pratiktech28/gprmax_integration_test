@@ -1,0 +1,41 @@
+name: Integration Test CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  integration:
+    name: Simulation Engine & Logic Sync
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install gprMax Core
+        run: |
+          pip install --upgrade pip
+          pip install gprMax numpy
+
+      - name: Execute End-to-End Simulation
+        run: |
+          # Is line ko verify karna ki sample_model.in root folder mein hai
+          python -m gprMax sample_model.in -n 1
+
+      - name: Verify Physics Integrity
+        run: |
+          # Kyunki files root mein hain, hum seedha script call karenge
+          python .github/workflows/test_integration.py
+
+      - name: Deployment Status
+        if: success()
+        run: echo "Integration successful. Simulation and Validation layers are in sync."
