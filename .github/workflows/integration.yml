@@ -24,12 +24,10 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install numpy matplotlib
-          # Hum yahan gprMax ko install karne ki koshish karenge
           pip install git+https://github.com/gprMax/gprMax.git || echo "gprMax installation skipped, using mock for integration"
 
       - name: Verify Physics Integrity
         run: |
-          # Agar gprMax nahi bhi hai, toh hamari script .npy files ko compare kar legi
           python .github/workflows/test_integration.py
 
       - name: Deployment Status
