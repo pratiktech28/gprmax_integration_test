@@ -7,11 +7,9 @@ def run_integration_check(reference_file, current_file, threshold=0.01):
     Calculates NRMSE between simulation output and theoretical reference.
     """
     try:
-        # Data loading logic
         ref_data = np.load(reference_file)
         cur_data = np.load(current_file)
 
-        # NRMSE Calculation logic
         rmse = np.sqrt(np.mean((ref_data - cur_data)**2))
         data_range = np.max(ref_data) - np.min(ref_data)
         
@@ -39,15 +37,11 @@ def run_integration_check(reference_file, current_file, threshold=0.01):
         return False
 
 if __name__ == "__main__":
-    # Path settings for CI/CD environment
-    # Note: Terminal 'cd' handle karega paths ko, isliye files ka naam kafi hai
     REFERENCE = "golden_reference.npy"
     CURRENT = "current_simulation.npy"
     
     success = run_integration_check(REFERENCE, CURRENT)
     
-    # Exit code helps GitHub Actions to mark the build as Success or Failure
-    if not success:
         sys.exit(1)
     else:
         sys.exit(0)
