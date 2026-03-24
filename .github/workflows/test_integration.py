@@ -38,8 +38,10 @@ def run_integration_check(reference_file, current_file, threshold=0.01):
 if __name__ == "__main__":
     REFERENCE = "golden_reference.npy"
     CURRENT = "current_simulation.npy"
-    
+
     success = run_integration_check(REFERENCE, CURRENT)
-        sys.exit(1)
+    
+    if success:
+        sys.exit(0)  
     else:
-        sys.exit(0)
+        sys.exit(1)  
