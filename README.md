@@ -1,6 +1,6 @@
 [![Integration Test CI](https://github.com/pratiktech28/gprmax_integration_test/actions/workflows/integration.yml/badge.svg)](https://github.com/pratiktech28/gprmax_integration_test/actions/workflows/integration.yml)
 
-<img width="412" height="122" alt="download" src="https://github.com/user-attachments/assets/0191f5d7-407a-4217-b9c4-023a624c7d1d" />            <img width="225" height="225" alt="download" src="https://github.com/user-attachments/assets/556ce370-2f83-47c5-8a2c-642ebc10e113" />
+<img width="412" height="225" alt="download" src="https://github.com/user-attachments/assets/0191f5d7-407a-4217-b9c4-023a624c7d1d" />            <img width="225" height="225" alt="download" src="https://github.com/user-attachments/assets/556ce370-2f83-47c5-8a2c-642ebc10e113" />
 
 ![download](https://github.com/user-attachments/assets/fe13b6ac-7631-4a8f-afe9-45c6aae90ab1)
 
