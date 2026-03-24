@@ -12,7 +12,6 @@ def run_integration_check(reference_file, current_file, threshold=0.01):
 
         rmse = np.sqrt(np.mean((ref_data - cur_data)**2))
         data_range = np.max(ref_data) - np.min(ref_data)
-        
         if data_range == 0:
             nrmse = 0.0
         else:
